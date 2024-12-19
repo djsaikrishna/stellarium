@@ -57337,7 +57337,7 @@ msgstr "天师"
 
 #: skycultures/korean/star_names.fab:13 skycultures/korean/star_names.fab:17
 msgid "CheonGou"
-msgstr "天高"
+msgstr "天库"
 
 #: skycultures/korean/star_names.fab:14
 msgid "SaGong"
@@ -59234,7 +59234,7 @@ msgstr "安德鲁斯星 Andrews' star"
 #: skycultures/modern/star_names.fab:125
 #: skycultures/modern_sternenkarten/star_names.fab:124
 msgid "Prijipati"
-msgstr "Prijipati"
+msgstr "八谷一 Prijipati"
 
 #: skycultures/modern/star_names.fab:128
 #: skycultures/modern_iau/star_names.fab:273
@@ -62208,7 +62208,7 @@ msgstr "天市右垣十 楚 Yed Posterior"
 #: skycultures/modern/star_names.fab:732
 #: skycultures/modern_sternenkarten/star_names.fab:727
 msgid "Yed Post"
-msgstr "Yed Post"
+msgstr "勾陈增九 Yed Post"
 
 #: skycultures/modern/star_names.fab:733
 #: skycultures/modern_iau/star_names.fab:323
@@ -62630,12 +62630,12 @@ msgstr "卷舌三 Menkib"
 #: skycultures/modern_sternenkarten/star_names.fab:821
 #: skycultures/romanian/star_names.fab:28
 msgid "Atik"
-msgstr "卷舌增七 Atik"
+msgstr "Atik"
 
 #: skycultures/modern/star_names.fab:825
 #: skycultures/modern_sternenkarten/star_names.fab:819
 msgid "Ati"
-msgstr "Ati"
+msgstr "卷舌五 Ati"
 
 #: skycultures/modern/star_names.fab:826
 #: skycultures/modern_sternenkarten/star_names.fab:820
@@ -62645,7 +62645,7 @@ msgstr "Alatik"
 #: skycultures/modern/star_names.fab:828
 #: skycultures/modern_sternenkarten/star_names.fab:822
 msgid "Menkhib"
-msgstr "Menkhib"
+msgstr "卷舌四"
 
 #: skycultures/modern/star_names.fab:829
 #: skycultures/modern_sternenkarten/star_names.fab:823
@@ -64135,7 +64135,7 @@ msgstr "勾陈四 Akfa Farkadain"
 #: skycultures/modern/star_names.fab:1135
 #: skycultures/modern_sternenkarten/star_names.fab:1129
 msgid "Anwa Farkadain"
-msgstr "勾陈增九 Anwa Farkadain"
+msgstr "Anwa Farkadain"
 
 #: skycultures/modern/star_names.fab:1137
 #: skycultures/modern_hlad/star_names.fab:81

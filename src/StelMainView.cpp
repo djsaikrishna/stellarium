@@ -708,6 +708,11 @@ void StelMainView::resizeEvent(QResizeEvent* event)
 		rootItem->setSize(sz);
 		if(guiItem)
 			guiItem->setGeometry(QRectF(0.0,0.0,sz.width(),sz.height()));
+		if (StelApp::isInitialized()  && !isFullScreen())
+		{
+			StelApp::immediateSave("video/screen_w", sz.width());
+			StelApp::immediateSave("video/screen_h", sz.height());
+		}
 		emit sizeChanged(sz);
 	}
 	QGraphicsView::resizeEvent(event);
@@ -1482,6 +1487,7 @@ void StelMainView::setFullScreen(bool b)
 			move(x + screenGeom.x(), y + screenGeom.y());
 		}
 	}
+	StelApp::immediateSave("video/fullscreen", b);
 	emit fullScreenChanged(b);
 }
 
@@ -1526,6 +1532,7 @@ void StelMainView::setFlagCursorTimeout(bool b)
 		cursorTimeoutTimer->stop();
 	}
 	
+	StelApp::immediateSave("gui/flag_mouse_cursor_timeout", b);
 	emit flagCursorTimeoutChanged(b);
 }
 
@@ -1579,12 +1586,20 @@ bool StelMainView::needsMaxFPS() const
 
 void StelMainView::moveEvent(QMoveEvent * event)
 {
-	Q_UNUSED(event)
+	const QPoint &pos=event->pos();
 
 	// We use the glWidget instead of the event, as we want the screen that shows most of the widget.
 	QWindow* win = glWidget->windowHandle();
 	if(win)
+	{
 		stelApp->setDevicePixelsPerPixel(win->devicePixelRatio());
+	}
+
+	if (StelApp::isInitialized())
+	{
+		StelApp::immediateSave("video/screen_x", pos.x());
+		StelApp::immediateSave("video/screen_y", pos.y());
+	}
 }
 
 void StelMainView::closeEvent(QCloseEvent* event)
