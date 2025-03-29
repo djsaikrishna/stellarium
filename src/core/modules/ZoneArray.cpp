@@ -442,7 +442,8 @@ void SpecialZoneArray<Star>::draw(StelPainter* sPainter, int index, bool isInsid
 		if (cutoffMagStep>limitMagIndex)
 			cutoffMagStep = limitMagIndex;
 	}
-	Q_ASSERT(cutoffMagStep<RCMAG_TABLE_SIZE);
+	Q_ASSERT_X(cutoffMagStep<=RCMAG_TABLE_SIZE, "ZoneArray.cpp",
+		   QString("RCMAG_TABLE_SIZE: %1, cutoffmagStep: %2").arg(QString::number(RCMAG_TABLE_SIZE), QString::number(cutoffMagStep)).toLatin1());
     
 	// Go through all stars, which are sorted by magnitude (bright stars first)
 	const SpecialZoneData<Star>* zoneToDraw = getZones() + index;
@@ -564,7 +565,7 @@ void SpecialZoneArray<Star>::searchAround(const StelCore* core, int index, const
 	const float dyrs = static_cast<float>(core->getJDE()-STAR_CATALOG_JDEPOCH)/365.25;
 	const SpecialZoneData<Star> *const z = getZones()+index;
 	Vec3d tmp;
-	double RA, DEC, pmra, pmdec, PlxErr, Plx, RadialVel;
+	double RA, DEC, pmra, pmdec, Plx, RadialVel;
 	for (const Star* s=z->getStars();s<z->getStars()+z->size;++s)
 	{
 		s->getFull6DSolution(RA, DEC, Plx, pmra, pmdec, RadialVel, dyrs);
